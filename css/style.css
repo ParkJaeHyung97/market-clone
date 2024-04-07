@@ -2,6 +2,12 @@
 @import "Header.css";
 @import "footer.css";
 @import "main.css";
+
+:root {
+  --button-primary: rgb(254, 111, 15);
+  --button-hover: rgba(254, 111, 15, 0.5);
+}
+
 body {
   font-family: "Dongle", sans-serif;
   font-weight: 400;
