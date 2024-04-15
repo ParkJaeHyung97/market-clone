@@ -29,13 +29,13 @@ async def create_item(image:UploadFile,
                 price:Annotated[int,Form()],
                 description:Annotated[str,Form()],
                 place:Annotated[str,Form()],
-                insertAt:Annotated[int,Form()]
+                insertAT:Annotated[int,Form()]
                 ):
     
     image_bytes = await image.read()
     cur.execute(f"""
                 INSERT INTO items(title,image,price,description,place,insertAt)
-                VALUES ('{title}','{image_bytes.hex()}',{price},'{description}','{place}',{insertAt})
+                VALUES ('{title}','{image_bytes.hex()}',{price},'{description}','{place}',{insertAT})
                 """)
     con.commit()
     return '200'
@@ -56,6 +56,6 @@ async def get_image(item_id):
     image_bytes = cur.execute(f"""
                               SELECT image from items WHERE id={item_id}
                               """).fetchone()[0]
-    return Response(content=bytes.fromhex(image_bytes))
+    return Response(content=bytes.fromhex(image_bytes), media_type='image/*')
 
 app.mount("/", StaticFiles(directory="frontend", html=True),name="frontend")

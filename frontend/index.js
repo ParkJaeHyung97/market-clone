@@ -6,10 +6,11 @@ const calcTime = (timestamp) => {
   const minute = time.getMinutes();
   const second = time.getSeconds();
 
-  if (hour > 0) return `${hour}시간 전`;
-  else if (minute > 0) return `${minute}분 전`;
-  else if (second > 0) return `${second}초 전`;
-  else "방금 전";
+
+   if (hour > 0) return `${hour}시간 전`;
+   else if (minute > 0) return `${minute}분 전`;
+   else if (second > 0) return `${second}초 전`;
+  else  return "방금 전";
 };
 
 const renderData = (data) => {
@@ -37,7 +38,9 @@ const renderData = (data) => {
 
     const InfoMetaDiv = document.createElement("div");
     InfoMetaDiv.className = "item-list__info-meta";
-    InfoMetaDiv.innerText = obj.place + " " + calcTime(obj.insertAt);
+    InfoMetaDiv.innerText = obj.place + " " + calcTime(obj.insertAT);
+
+    
 
     const InfoPriceDiv = document.createElement("div");
     InfoPriceDiv.className = "item-list__info-price";
