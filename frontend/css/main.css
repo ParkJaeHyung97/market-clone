@@ -1,5 +1,5 @@
 main {
-  padding: 30px 20px 30px 20px;
+  padding: 30px 20px 100px 20px; /*상 우 하 좌 */
 }
 
 .item-list {
@@ -43,10 +43,11 @@ main {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   margin-right: 20px;
+  overflow: hidden;
 }
 
 .item-list__img img {
-  width: 50px;
+  width: 150px;
 }
 
 .write-btn {
