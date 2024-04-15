@@ -61,6 +61,7 @@ main {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 7px 29px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  text-decoration: none;
 }
 
 .write-btn:hover {
