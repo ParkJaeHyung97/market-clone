@@ -24,4 +24,21 @@ async def create_item(image:UploadFile,
     con.commit()
     return '200'
 
+@app.get('/items')
+async def get_items():
+    con.row_factory = sqlite3.Row
+    cur = con.cursor()
+    rows = cur.execute(f"""
+                       SELECT * from items;
+                       """).fetchall()
+    
+    return JSONResponse(jsonable_encoder(dict(row) for row in rows))
+
+@app.get('/images/{item_id}')
+async def get_image(item_id):
+    cur = con.cursor()
+    image_bytes = cur.execute(f"""
+                              SELECT image from items WHERE id={item_id}
+                              """).fetchone()[0]
+
 app.mount("/", StaticFiles(directory="frontend", html=True),name="frontend")
