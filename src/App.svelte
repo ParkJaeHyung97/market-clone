@@ -18,8 +18,8 @@
 
 <Router {routes} />
 
-<style>
+<!-- <style>
   div {
     color: red;
   }
-</style>
+</style> -->
