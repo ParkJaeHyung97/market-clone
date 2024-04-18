@@ -1,18 +1,18 @@
 <script>
-import { getDatabase, ref, push } from "firebase/database";
+  import { getDatabase, ref, push } from "firebase/database";
 
-let title;
-let price;
-let description;
-let place;
+  let title;
+  let price;
+  let description;
+  let place;
 
-function writeUserData() {
+  function writeUserData() {
     const db = getDatabase();
-  push(ref(db, "items/"), {
-    title,
-    price,
-    description,
-    place,
+    push(ref(db, "items/"), {
+     title,
+     price,
+     description,
+     place,
 
 
   });
