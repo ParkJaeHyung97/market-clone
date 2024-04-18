@@ -1,0 +1,33 @@
+@import "reset.css";
+@import "Header.css";
+@import "footer.css";
+@import "main.css";
+
+:root {
+  --button-primary: rgb(254, 111, 15);
+  --button-hover: rgba(254, 111, 15, 0.5);
+}
+
+body {
+  font-family: "Dongle", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.media-info-msg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: orange;
+}
+
+@media screen and (max-width: 750px) {
+  .media-info-msg {
+    display: none;
+  }
+}
