@@ -16,9 +16,6 @@
   };
 </script>
 
-<Router {routes} />
+<Router {routes}></Router>
 
 <main></main>
-
-<style>
-</style>
