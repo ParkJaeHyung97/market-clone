@@ -21,7 +21,4 @@
 <main></main>
 
 <style>
-  div {
-    color: red;
-  }
 </style>
