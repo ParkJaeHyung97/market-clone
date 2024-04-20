@@ -1,12 +1,13 @@
 <script>
   import { getDatabase, ref, push } from "firebase/database";
+  import Footer from "../components/Footer.svelte";
 
   let title;
   let price;
   let description;
   let place;
 
-  function writeUserData(event) {
+  async function writeUserData() {
     const db = getDatabase();
     push(ref(db, "items/"), {
       title,
@@ -14,6 +15,8 @@
       description,
       place,
     });
+    alert("글쓰기 완료!"); // 현업에서는 확인을 추가로 사용자가 눌러야 하기 때문에 거의 안씀.
+    window.location.hash = "/";
   }
 </script>
 
@@ -44,6 +47,22 @@
     <input type="text" id="place" name="place" bind:value={place} />
   </div>
   <div>
-    <button type="submit">제출</button>
+    <button class="write-btn2" type="submit">글쓰기 완료!</button>
   </div>
 </form>
+
+<Footer location="write" />
+
+<!--footer 모듈화-->
+
+<style>
+  .write-btn2 {
+    background-color: tomato;
+    color: white;
+    border: solid orange 1px;
+    border-radius: 10px;
+    padding: 5px 12px 5px 12px;
+    margin: 10px;
+    cursor: pointer;
+  }
+</style>
