@@ -2,6 +2,7 @@
 @import "Header.css";
 @import "footer.css";
 @import "main.css";
+@import "write.css";
 
 :root {
   --button-primary: rgb(254, 111, 15);

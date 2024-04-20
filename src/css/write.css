@@ -1,0 +1,45 @@
+.title-name {
+  color: tomato;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.price-name {
+  color: tomato;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.description-name {
+  color: tomato;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.place-name {
+  color: tomato;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-bar {
+  border-radius: 10px;
+  margin: 5px 0px 5px 0px;
+}
+.price-bar {
+  border-radius: 10px;
+  margin: 5px 0px 5px 0px;
+}
+.description-bar {
+  border-radius: 10px;
+  margin: 5px 0px 5px 0px;
+}
+.place-bar {
+  border-radius: 10px;
+  margin: 5px 0px 5px 0px;
+}

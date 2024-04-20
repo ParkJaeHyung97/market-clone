@@ -25,26 +25,45 @@
     <label for="image">이미지</label>
     <input type="file" id="image" name="image" />
   </div> -->
-  <div>
+  <div class="title-name">
     <label for="title">제목</label>
-    <input type="text" id="title" name="title" bind:value={title} />
+    <input
+      class="title-bar"
+      type="text"
+      id="title"
+      name="title"
+      bind:value={title}
+    />
   </div>
-  <div>
+  <div class="price-name">
     <label for="price">가격</label>
-    <input type="number" id="price" name="price" bind:value={price} />
+    <input
+      class="price-bar"
+      type="number"
+      id="price"
+      name="price"
+      bind:value={price}
+    />
   </div>
-  <div>
+  <div class="description-name">
     <label for="description">설명</label>
     <input
+      class="description-bar"
       type="text"
       id="description"
       name="description"
       bind:value={description}
     />
   </div>
-  <div>
+  <div class="place-name">
     <label for="place">장소</label>
-    <input type="text" id="place" name="place" bind:value={place} />
+    <input
+      class="place-bar"
+      type="text"
+      id="place"
+      name="place"
+      bind:value={place}
+    />
   </div>
   <div>
     <button class="write-btn2" type="submit">글쓰기 완료!</button>
