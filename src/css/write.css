@@ -9,6 +9,9 @@
   padding-left: 300px;
   padding-right: 300px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .title-name {
