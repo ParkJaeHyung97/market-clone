@@ -73,15 +73,3 @@
 <Footer location="write" />
 
 <!--footer 모듈화-->
-
-<style>
-  .write-btn2 {
-    background-color: tomato;
-    color: white;
-    border: solid orange 1px;
-    border-radius: 10px;
-    padding: 5px 12px 5px 12px;
-    margin: 10px;
-    cursor: pointer;
-  }
-</style>
