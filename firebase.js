@@ -4,14 +4,13 @@ import { getStorage } from "firebase/storage";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBe1eDugydkRzTQI1zShVaZsoDTl0D4HoA",
-  authDomain: "carrot-clone-retry.firebaseapp.com",
-  databaseURL:
-    "https://carrot-clone-retry-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "carrot-clone-retry",
-  storageBucket: "carrot-clone-retry.appspot.com",
-  messagingSenderId: "751543553052",
-  appId: "1:751543553052:web:2461e3501e5a2a343c63d9",
+  apiKey: import.meta.env.VITE_APP_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  databaseURL: import.meta.env.VITE_DB_URL,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
 };
 
 // Initialize Firebase
