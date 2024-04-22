@@ -8,6 +8,23 @@
 
   $: items = []; //$을 쓰면 업데이트될때마다 스벨트 자체에서 업데이트 진행
 
+  const calcTime = (timestamp) => {
+    //한국시간 UTC+9 이므로 9시간 빼주기
+    const curTime = new Date().getTime() - 9 * 60 * 60 * 1000;
+    const time = new Date(curTime - timestamp);
+    const hour = time.getHours();
+    const minute = time.getMinutes();
+    const second = time.getSeconds();
+    const month = time.getMonth();
+    const day = time.getDay();
+    const year = time.getFullYear();
+
+    if (hour > 0) return `${hour}시간 전`;
+    else if (minute > 0) return `${minute}분 전`;
+    else if (second > 0) return `${second}초 전`;
+    else return "방금 전";
+  };
+
   const db = getDatabase();
   const itemsRef = ref(db, "items/");
 
@@ -16,7 +33,7 @@
   onMount(() => {
     onValue(itemsRef, (snapshot) => {
       const data = snapshot.val();
-      items = Object.values(data);
+      items = Object.values(data).reverse(); //.reverse를 통하여 역순으로 (최신순)으로 정렬
     });
   });
 </script>
@@ -48,10 +65,15 @@
 <main>
   {#each items as item}
     <div class="item-list">
-      <div class="item-list__img" />
+      <div class="item-list__img">
+        <img alt={item.title} src={item.imgUrl} />
+      </div>
       <div class="item-list__info">
         <div class="item-list__info-title">{item.title}</div>
-        <div class="item-list__info-meta">{item.place}</div>
+        <div class="item-list__info-meta">
+          {item.place}
+          {calcTime(item.insertAt)}
+        </div>
         <div class="item-list__info-price">{item.price}</div>
         <div>{item.description}</div>
       </div>
