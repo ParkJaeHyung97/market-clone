@@ -1,12 +1,13 @@
 <script>
   import { getDatabase, ref, push } from "firebase/database";
-  import Footer from "../components/Footer.svelte";
+  import Footer from "../components/Nav.svelte";
   import {
     getStorage,
     ref as refImage,
     uploadBytes,
     getDownloadURL,
   } from "firebase/storage";
+  import Nav from "../components/Nav.svelte";
 
   let title;
   let price;
@@ -53,7 +54,7 @@
 <form id="write-form" on:submit|preventDefault={handleSubmit}>
   <div>
     <label for="image">이미지</label>
-    <input type="file" bind:files id="image" name="image" />>
+    <input type="file" bind:files id="image" name="image" />
   </div>
   <div class="title-name">
     <label for="title">제목</label>
@@ -100,6 +101,6 @@
   </div>
 </form>
 
-<Footer location="write" />
+<Nav location="write" />
 
 <!--footer 모듈화-->
